@@ -32,6 +32,7 @@ class LoginPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 30.0),
                 TextField(
+                  style: const TextStyle(fontSize: 22.0),
                   decoration: InputDecoration(
                     labelText: 'Email',
                     border: OutlineInputBorder(
@@ -43,6 +44,7 @@ class LoginPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 20.0),
                 TextField(
+                  style: const TextStyle(fontSize: 22.0),
                   decoration: InputDecoration(
                     labelText: 'Password',
                     border: OutlineInputBorder(
@@ -55,7 +57,7 @@ class LoginPage extends StatelessWidget {
                 const SizedBox(height: 30.0),
                 Container(
                   width: double.infinity,
-                  height: 55.0,
+                  height: 60.0,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(16.0),
                     gradient: const LinearGradient(
@@ -70,7 +72,7 @@ class LoginPage extends StatelessWidget {
                       child: Text(
                         'Login',
                         style: TextStyle(
-                          fontSize: 20.0,
+                          fontSize: 24.0,
                           fontWeight: FontWeight.bold,
                           color: Colors.black,
                         ),
@@ -85,7 +87,7 @@ class LoginPage extends StatelessWidget {
                     const Text(
                       "Don't have an account? ",
                       style: TextStyle(
-                        fontSize: 18.0,
+                        fontSize: 20.0,
                         color: Color.fromARGB(255, 94, 94, 94),
                       ),
                     ),
@@ -96,7 +98,7 @@ class LoginPage extends StatelessWidget {
                         style: TextStyle(
                           decoration: TextDecoration.underline,
                           fontWeight: FontWeight.bold,
-                          fontSize: 18.0,
+                          fontSize: 20.0,
                         ),
                       ),
                     ),
@@ -110,7 +112,7 @@ class LoginPage extends StatelessWidget {
                     style: TextStyle(
                       color: Color.fromARGB(255, 94, 94, 94),
                       fontWeight: FontWeight.bold,
-                      fontSize: 18.0,
+                      fontSize: 20.0,
                     ),
                   ),
                 ),
