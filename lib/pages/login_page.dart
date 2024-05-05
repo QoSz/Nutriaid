@@ -67,7 +67,7 @@ class LoginPage extends StatelessWidget {
                     ),
                   ),
                   child: InkWell(
-                    onTap: () {},
+                    onTap: () => Navigator.pushNamed(context, '/dashboard'),
                     child: const Center(
                       child: Text(
                         'Login',
