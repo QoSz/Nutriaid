@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nutriaid/pages/calorie_page.dart';
 import 'package:nutriaid/pages/dashboard_page.dart';
 import 'package:nutriaid/pages/login_page.dart';
 import 'package:nutriaid/pages/register_page.dart';
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
         '/login': (context) => const LoginPage(),
         '/register': (context) => const RegisterPage(),
         '/dashboard': (context) => const DashboardPage(),
+        '/calorie': (context) => const CaloriePage(),
       },
     );
   }
