@@ -5,6 +5,7 @@ import 'package:nutriaid/pages/hydration_page.dart';
 import 'package:nutriaid/pages/login_page.dart';
 import 'package:nutriaid/pages/nutrition_page.dart';
 import 'package:nutriaid/pages/register_page.dart';
+import 'package:nutriaid/pages/weight_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
         '/calorie': (context) => const CaloriePage(),
         '/nutrition': (context) => const NutritionPage(),
         '/hydration': (context) => const HydrationPage(),
+        '/weight': (context) => const WeightPage(),
       },
     );
   }
