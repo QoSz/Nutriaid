@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nutriaid/pages/calorie_page.dart';
 import 'package:nutriaid/pages/dashboard_page.dart';
+import 'package:nutriaid/pages/education_page.dart';
 import 'package:nutriaid/pages/hydration_page.dart';
 import 'package:nutriaid/pages/login_page.dart';
 import 'package:nutriaid/pages/meal_page.dart';
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
         '/hydration': (context) => const HydrationPage(),
         '/weight': (context) => const WeightPage(),
         '/meal': (context) => const MealPage(),
+        '/education': (context) => const EducationPage(),
       },
     );
   }

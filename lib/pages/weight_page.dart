@@ -285,7 +285,6 @@ class _WeightPageState extends State<WeightPage>
   }
 
   Widget dailyLoss() {
-    // This section should also dynamically update based on actual data
     return const Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
@@ -370,9 +369,7 @@ class _WeightPageState extends State<WeightPage>
                     );
                   }).toList(),
                   onChanged: (String? newValue) {
-                    setState(() {
-                      // Update gender state here if needed
-                    });
+                    setState(() {});
                   },
                 ),
                 TextFormField(
@@ -450,7 +447,6 @@ class _WeightPageState extends State<WeightPage>
             TextButton(
               child: const Text('Save'),
               onPressed: () {
-                // Save the data and calculate BMI, then update the state
                 Navigator.of(context).pop();
               },
             ),
@@ -482,7 +478,7 @@ class _WeightPageState extends State<WeightPage>
       // Enable horizontal and vertical scrolling
       scrollDirection: Axis.horizontal,
       child: Container(
-        width: 800, // Adjust the width to fit your data or preference
+        width: 800,
         padding: const EdgeInsets.all(16.0),
         child: LineChart(
           LineChartData(
