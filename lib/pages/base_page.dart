@@ -34,7 +34,7 @@ class _BasePageState extends State<BasePage> {
         routeName = '/nutrition'; // Nutrition Page
         break;
       case 2:
-        routeName = '/plans'; // Plans Page
+        routeName = '/meal'; // Plans Page
         break;
       case 3:
         routeName = '/community'; // Community Page
@@ -158,7 +158,7 @@ class _BasePageState extends State<BasePage> {
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
                 ),
                 onTap: () {
-                  Navigator.pushReplacementNamed(context, '/plans');
+                  Navigator.pushReplacementNamed(context, '/meal');
                 },
               ),
               ListTile(
