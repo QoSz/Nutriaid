@@ -163,7 +163,9 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
                     ),
                     TextButton(
-                      onPressed: () {}, // Define functionality
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/change-password');
+                      }, // Define functionality
                       child: RichText(
                         text: const TextSpan(
                           text: 'Change Password',
