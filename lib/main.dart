@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nutriaid/pages/calorie_page.dart';
+import 'package:nutriaid/pages/changepassword_page.dart';
 import 'package:nutriaid/pages/community_page.dart';
 import 'package:nutriaid/pages/dashboard_page.dart';
 import 'package:nutriaid/pages/education_page.dart';
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
         '/education': (context) => const EducationPage(),
         '/community': (context) => const CommunityPage(),
         '/profile': (context) => const ProfilePage(),
+        '/change-password': (context) => const ChangePasswordPage(),
       },
     );
   }
