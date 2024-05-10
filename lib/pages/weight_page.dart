@@ -171,7 +171,7 @@ class _WeightPageState extends State<WeightPage>
             Text(
                 targetDate != null
                     ? DateFormat('MMM dd, yy').format(targetDate!)
-                    : "Jan 23, 24",
+                    : "Jul 23, 24",
                 style: const TextStyle(fontSize: 18)),
           ],
         ),

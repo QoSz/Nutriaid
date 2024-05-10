@@ -7,6 +7,7 @@ import 'package:nutriaid/pages/hydration_page.dart';
 import 'package:nutriaid/pages/login_page.dart';
 import 'package:nutriaid/pages/meal_page.dart';
 import 'package:nutriaid/pages/nutrition_page.dart';
+import 'package:nutriaid/pages/profile_page.dart';
 import 'package:nutriaid/pages/register_page.dart';
 import 'package:nutriaid/pages/weight_page.dart';
 
@@ -34,6 +35,7 @@ class MyApp extends StatelessWidget {
         '/meal': (context) => const MealPage(),
         '/education': (context) => const EducationPage(),
         '/community': (context) => const CommunityPage(),
+        '/profile': (context) => const ProfilePage(),
       },
     );
   }
