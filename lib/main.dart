@@ -3,6 +3,7 @@ import 'package:nutriaid/pages/calorie_page.dart';
 import 'package:nutriaid/pages/community_page.dart';
 import 'package:nutriaid/pages/dashboard_page.dart';
 import 'package:nutriaid/pages/education_page.dart';
+import 'package:nutriaid/pages/forgotpassword_page.dart';
 import 'package:nutriaid/pages/hydration_page.dart';
 import 'package:nutriaid/pages/login_page.dart';
 import 'package:nutriaid/pages/meal_page.dart';
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
         '/education': (context) => const EducationPage(),
         '/community': (context) => const CommunityPage(),
         '/profile': (context) => const ProfilePage(),
+        '/forgot-password': (context) => const ForgotPasswordPage(),
       },
     );
   }

@@ -106,7 +106,9 @@ class LoginPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 10.0),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/forgot-password');
+                  },
                   child: const Text(
                     "Forgot Password?",
                     style: TextStyle(
