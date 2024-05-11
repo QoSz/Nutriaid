@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:nutriaid/pages/base_page.dart';
-import 'package:nutriaid/pages/hydrationprogresscard.dart';
+import 'package:nutriaid/widgets/hydrationprogresscard.dart';
 import 'package:provider/provider.dart';
-import 'hydration_model.dart'; // Ensure this matches the correct import path for your project
+import '../models/hydration_model.dart'; // Ensure this matches the correct import path for your project
 
 class HydrationPage extends StatefulWidget {
   const HydrationPage({super.key});

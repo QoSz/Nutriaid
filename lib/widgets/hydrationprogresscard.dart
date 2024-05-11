@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:provider/provider.dart';
-import 'hydration_model.dart'; // Ensure this matches the correct import path for your project
+import '../models/hydration_model.dart'; // Ensure this matches the correct import path for your project
 
 class HydrationProgressCard extends StatelessWidget {
   const HydrationProgressCard({super.key});

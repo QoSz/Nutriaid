@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:nutriaid/pages/base_page.dart';
-import 'package:nutriaid/pages/caloriemodel.dart';
-import 'package:nutriaid/pages/calorieoverviewcard.dart';
-import 'package:nutriaid/pages/hydration_model.dart';
-import 'package:nutriaid/pages/hydrationprogresscard.dart';
-import 'package:nutriaid/pages/macronutrientsoverviewcard.dart';
+import 'package:nutriaid/models/caloriemodel.dart';
+import 'package:nutriaid/widgets/calorieoverviewcard.dart';
+import 'package:nutriaid/models/hydration_model.dart';
+import 'package:nutriaid/widgets/hydrationprogresscard.dart';
+import 'package:nutriaid/widgets/macronutrientsoverviewcard.dart';
 import 'package:provider/provider.dart';
 
 class DashboardPage extends StatefulWidget {

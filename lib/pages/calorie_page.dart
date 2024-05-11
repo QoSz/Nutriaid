@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:nutriaid/pages/base_page.dart';
-import 'package:nutriaid/pages/caloriemodel.dart';
-import 'package:nutriaid/pages/calorieoverviewcard.dart';
+import 'package:nutriaid/models/caloriemodel.dart';
+import 'package:nutriaid/widgets/calorieoverviewcard.dart';
 import 'package:provider/provider.dart';
 
 class CaloriePage extends StatefulWidget {
