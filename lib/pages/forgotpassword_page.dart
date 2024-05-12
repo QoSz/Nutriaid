@@ -1,7 +1,63 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
-class ForgotPasswordPage extends StatelessWidget {
+class ForgotPasswordPage extends StatefulWidget {
   const ForgotPasswordPage({super.key});
+
+  @override
+  // ignore: library_private_types_in_public_api
+  _ForgotPasswordPageState createState() => _ForgotPasswordPageState();
+}
+
+class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
+  final TextEditingController _emailController = TextEditingController();
+  bool _isSending = false;
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    super.dispose();
+  }
+
+  Future<void> sendPasswordResetEmail() async {
+    if (_emailController.text.isEmpty || !_emailController.text.contains('@')) {
+      _showDialog('Error', 'Please enter a valid email address.');
+      return;
+    }
+    setState(() {
+      _isSending = true;
+    });
+    try {
+      await FirebaseAuth.instance
+          .sendPasswordResetEmail(email: _emailController.text.trim());
+      _showDialog('Success', 'Reset link has been sent to your email.');
+    } on FirebaseAuthException catch (e) {
+      _showDialog('Error',
+          e.message ?? 'An error occurred while trying to send reset email.');
+    } finally {
+      setState(() {
+        _isSending = false;
+      });
+    }
+  }
+
+  void _showDialog(String title, String content) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text(title),
+        content: Text(content),
+        actions: <Widget>[
+          TextButton(
+            child: const Text('OK'),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
+        ],
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +83,7 @@ class ForgotPasswordPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 30.0),
                 TextField(
+                  controller: _emailController,
                   style: const TextStyle(fontSize: 22.0),
                   decoration: InputDecoration(
                     labelText: 'Email',
@@ -50,18 +107,18 @@ class ForgotPasswordPage extends StatelessWidget {
                     ),
                   ),
                   child: InkWell(
-                    onTap: () {
-                      // Logic to send reset password email
-                    },
-                    child: const Center(
-                      child: Text(
-                        'Send Reset Link',
-                        style: TextStyle(
-                          fontSize: 24.0,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
-                      ),
+                    onTap: !_isSending ? sendPasswordResetEmail : null,
+                    child: Center(
+                      child: _isSending
+                          ? const CircularProgressIndicator(color: Colors.white)
+                          : const Text(
+                              'Send Reset Link',
+                              style: TextStyle(
+                                fontSize: 24.0,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
                     ),
                   ),
                 ),

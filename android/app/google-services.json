@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "991547471887",
+    "project_id": "nutriaid-f2623",
+    "storage_bucket": "nutriaid-f2623.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:991547471887:android:a8dcbe5cb844470f238b7a",
+        "android_client_info": {
+          "package_name": "com.example.nutriaid"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3lOnP9P2kqgY_oiIuizWv6Zk6l3gJ_1Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
