@@ -48,5 +48,6 @@ void main() async {
   await firestoreService.updateUserData(uid, userData);
 
   // Retrieve user data
+  // ignore: unused_local_variable
   Map<String, dynamic> retrievedData = await firestoreService.getUserData(uid);
 }
