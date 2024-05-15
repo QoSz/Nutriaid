@@ -3,12 +3,16 @@ import 'package:flutter/material.dart';
 class HydrationModel with ChangeNotifier {
   int _currentIntake = 800; // Default intake
   int _waterIntakeGoal = 2400; // Default goal
+  final int _idealWaterIntake = 2810; // Default ideal intake
 
   // Getter for current intake
   int get currentIntake => _currentIntake;
 
   // Getter for water intake goal
   int get waterIntakeGoal => _waterIntakeGoal;
+
+  // Getter for ideal water intake
+  int get idealWaterIntake => _idealWaterIntake;
 
   // List to store water log entries
   final List<Map<String, dynamic>> _waterLogs = [

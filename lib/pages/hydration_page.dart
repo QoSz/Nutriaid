@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:nutriaid/pages/base_page.dart';
 import 'package:nutriaid/widgets/hydrationprogresscard.dart';
 import 'package:provider/provider.dart';
-import '../models/hydration_model.dart'; // Ensure this matches the correct import path for your project
+import '../models/hydration_model.dart';
+import 'package:nutriaid/widgets/ideal_and_target_water_card.dart';
 
 class HydrationPage extends StatefulWidget {
   const HydrationPage({super.key});
@@ -42,6 +43,8 @@ class _HydrationPageState extends State<HydrationPage>
                 SingleChildScrollView(
                   child: Column(
                     children: [
+                      const SizedBox(height: 20),
+                      const IdealAndTargetWaterCard(),
                       const SizedBox(height: 20),
                       Consumer<HydrationModel>(
                         builder: (context, hydration, child) =>
