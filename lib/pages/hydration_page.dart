@@ -4,6 +4,7 @@ import 'package:nutriaid/widgets/hydrationprogresscard.dart';
 import 'package:provider/provider.dart';
 import '../models/hydration_model.dart';
 import 'package:nutriaid/widgets/ideal_and_target_water_card.dart';
+import 'package:fl_chart/fl_chart.dart';
 
 class HydrationPage extends StatefulWidget {
   const HydrationPage({super.key});
@@ -56,8 +57,9 @@ class _HydrationPageState extends State<HydrationPage>
                   ),
                 ),
                 Container(
-                    // Additional content can be placed here if needed
-                    ),
+                  padding: const EdgeInsets.all(16.0),
+                  child: waterIntakeGraph(),
+                ),
               ],
             ),
           ),
@@ -101,6 +103,102 @@ class _HydrationPageState extends State<HydrationPage>
           ),
         );
       },
+    );
+  }
+
+  Widget waterIntakeGraph() {
+    return LineChart(
+      LineChartData(
+        gridData: FlGridData(
+          show: true,
+          getDrawingHorizontalLine: (value) {
+            return const FlLine(
+              color: Color(0xff37434d),
+              strokeWidth: 0.5,
+            );
+          },
+          getDrawingVerticalLine: (value) {
+            return const FlLine(
+              color: Color(0xff37434d),
+              strokeWidth: 0.5,
+            );
+          },
+        ),
+        titlesData: FlTitlesData(
+          bottomTitles: AxisTitles(
+            sideTitles: SideTitles(
+              showTitles: true,
+              interval: 1,
+              getTitlesWidget: (value, meta) {
+                const style = TextStyle(
+                  color: Color(0xff68737d),
+                  fontWeight: FontWeight.bold,
+                  fontSize: 14,
+                );
+                switch (value.toInt()) {
+                  case 1:
+                    return const Text('Mon', style: style);
+                  case 2:
+                    return const Text('Tue', style: style);
+                  case 3:
+                    return const Text('Wed', style: style);
+                  case 4:
+                    return const Text('Thu', style: style);
+                  case 5:
+                    return const Text('Fri', style: style);
+                  case 6:
+                    return const Text('Sat', style: style);
+                  case 7:
+                    return const Text('Sun', style: style);
+                  default:
+                    return Container();
+                }
+              },
+            ),
+          ),
+          leftTitles: AxisTitles(
+            sideTitles: SideTitles(
+              showTitles: true,
+              interval: 500,
+              getTitlesWidget: (value, meta) {
+                const style = TextStyle(
+                  color: Color(0xff68737d),
+                  fontWeight: FontWeight.bold,
+                  fontSize: 12,
+                );
+                return Text('${value.toInt()} ml', style: style);
+              },
+            ),
+          ),
+        ),
+        borderData: FlBorderData(
+          show: true,
+          border: Border.all(color: const Color(0xff37434d), width: 1),
+        ),
+        minX: 1,
+        maxX: 7,
+        minY: 0,
+        maxY: 3000,
+        lineBarsData: [
+          LineChartBarData(
+            spots: [
+              const FlSpot(1, 1500),
+              const FlSpot(2, 1800),
+              const FlSpot(3, 1400),
+              const FlSpot(4, 2200),
+              const FlSpot(5, 2000),
+              const FlSpot(6, 2300),
+              const FlSpot(7, 1700),
+            ],
+            isCurved: true,
+            color: Colors.blue,
+            barWidth: 4,
+            isStrokeCapRound: true,
+            belowBarData: BarAreaData(show: false),
+            dotData: const FlDotData(show: true),
+          ),
+        ],
+      ),
     );
   }
 }
