@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class HydrationModel with ChangeNotifier {
   int _currentIntake = 800; // Default intake
@@ -28,7 +29,7 @@ class HydrationModel with ChangeNotifier {
     _currentIntake += amount;
     _waterLogs.insert(0, {
       "amount": amount,
-      "time": DateTime.now().toString().substring(11, 16)
+      "time": DateFormat('hh:mm a').format(DateTime.now()) // Format time
     });
     notifyListeners(); // Notify listeners of change
   }
